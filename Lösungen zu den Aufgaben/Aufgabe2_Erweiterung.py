@@ -48,10 +48,16 @@ while True:
     
     # Ausgabe auf Display
     display.set_pen(RED)
+    display.circle(int(WIDTH/2), int(HEIGHT/2), 100)
+    
+    display.set_pen(BLACK)
+    display.circle(int(WIDTH/2), int(HEIGHT/2), 90)
+    
+    display.set_pen(RED)
 
     if stopped == True:
-        display.text(str((stop-start)/1000)+"s", int(WIDTH/2)-65, int(HEIGHT/2)-20, scale=5)
+        display.text(str("{0:.2f}".format((stop-start)/1000))+"s", int(WIDTH/2)-55, int(HEIGHT/2)-20, scale=5)
     else:
-        display.text(str((time.ticks_ms()-start)/1000)+"s", int(WIDTH/2)-65, int(HEIGHT/2)-20, scale=5)
+        display.text(str("{0:.2f}".format((time.ticks_ms()-start)/1000))+"s", int(WIDTH/2)-55, int(HEIGHT/2)-20, scale=5)
         
     display.update()
